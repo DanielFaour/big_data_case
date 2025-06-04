@@ -1,0 +1,10 @@
+<div id="ageChartContainer">
+    <h2>{{title}} Chart</h2>
+    <canvas baseChart
+      [data]="chartData"
+      [type]="chartType"
+      [options]="chartOptions">
+    </canvas>
+    <button id="changeChartButton" (click)="changeType()" >Change Chart Type</button>
+    <p></p>
+</div>

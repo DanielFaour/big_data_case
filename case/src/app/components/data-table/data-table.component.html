@@ -1,0 +1,75 @@
+<div id="dataTableComponentContainer">
+  <div class="containerBox">
+    <div id="tableInputContainer">
+      <input
+        type="text"
+        id="myInput"
+        [(ngModel)]="searchString"
+        (input)="onSearch()"
+        placeholder="Search by name"
+      />
+      <button id="clearInput" (click)="clearInput()">X</button>
+    </div>
+    
+    <div id="tableOuterContainer">
+      <div id="tableContainer">
+        <table *ngIf="sortedTable.length" cellspacing="0">
+          <thead>
+            <tr>
+              <th
+                *ngFor="let key of sortedTable[0] | keyvalue"
+                (click)="onHeaderClick(key.key)"
+              >
+                {{ key.key }}
+                <span
+                  class="sortIcon"
+                  *ngIf="
+                    activeSortKey === key.key &&
+                    sortDirection[getKey(key)] === 'desc'
+                  "
+                  [style.opacity]="1"
+                >
+                  ▾
+                </span>
+                <span
+                  class="sortIcon"
+                  *ngIf="
+                    activeSortKey === key.key &&
+                    sortDirection[getKey(key)] === 'asc'
+                  "
+                  [style.opacity]="1"
+                >
+                  ▴
+                </span>
+                <!-- <span
+                  class="sortIcon"
+                  *ngIf="activeSortKey !== key.key"
+                  [style.opacity]="0"
+                >
+                  ▾
+                </span> -->
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of sortedTable | slice : currentRow : rowLimit">
+              <td *ngFor="let key of row | keyvalue">{{ key.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="resultBox">
+      <p>
+        <span>Total entries: {{ amountRows }}</span>
+      </p>
+    </div>
+    <div id="tableControlsContainer">
+      <button class="backButton" (click)="firstPage()"><span>⭰</span></button>
+      <button class="backButton" (click)="backPage()">⭠</button>
+      <p>Page {{ currentPage }} / {{ amountPages }}</p>
+      <button class="forwardButton" (click)="forwardPage()">⭢</button>
+      <button class="forwardButton" (click)="lastPage()"><span>⭲</span></button>
+    </div>
+  </div>
+</div>

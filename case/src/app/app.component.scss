@@ -1,0 +1,78 @@
+#appContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+h1 {
+  margin: 2rem 0 0 0;
+}
+
+.containerContainer {
+  width: 100%;
+}
+
+.containerBox {
+  background-color: #fff;
+  border: 1.5px solid #818181;
+  padding: 15px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  /*
+  resize: vertical;
+  overflow: auto;
+  */
+}
+
+#chartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+  height: max-content;
+  text-align: center;
+}
+
+#mapChartComponentContainer,
+#ageChartComponentContainer,
+#stateChartComponentContainer {
+  width: 45%;
+  flex-grow: 1;
+}
+
+#changeChartButton {
+  display: block;
+  width: max-content;
+  padding: 5px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 800px) {
+  #appContainer {
+    width: 95%;
+  }
+  
+  #chartContainer {
+    flex-direction: column;
+  }
+  #mapChartComponentContainer,
+  #ageChartComponentContainer,
+  #stateChartComponentContainer {
+    width: 100%;
+
+  }
+  // #mapChartComponentContainer {
+  //   height: 500px;
+  // }
+}
+
+
