@@ -3,7 +3,7 @@
 ## Bygging av applikasjon
 1. Last ned ZIP-filen
 2. Pakk ut ZIP-filen hvor du ønsker applikasjonen skal være
-3. Åpne /case_et mappen i terminal og naviger til root-mappen til applikasjonen:
+3. Åpne /case mappen i terminal og naviger til root-mappen til applikasjonen:
     cd case
 4. Installer nødvendige pakker
     npm install
@@ -11,12 +11,12 @@
     ng build
 
 ## Kjøring av applikasjon
-1. I root-mappen, /case_et , kjør applikasjon:
+1. I root-mappen, /case , kjør applikasjon:
     ng serve
 2. Åpne addressen som vises i terminalen i nettleser
 
 ## Testing
-1. I root-mappen, /case_et , kjør test (husk at chrome må være installert):
+1. I root-mappen, /case , kjør test (husk at chrome må være installert):
     ng test
 
 ## TODO
